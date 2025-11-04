@@ -1,173 +1,190 @@
-Sistem Analisis Kehadiran
+<div align="center">
 
-Sebuah proyek Node.js untuk manajemen user, role, kategori, serta pencatatan dan analisis kehadiran. Dibangun menggunakan TypeScript, Prisma, dan MySQL.
+# 📊 Sistem Analisis Kehadiran
 
-Daftar Isi
+### Platform Manajemen Kehadiran Modern & Analitik
 
-Fitur
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma&logoColor=white)](https://www.prisma.io/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Express](https://img.shields.io/badge/Express.js-4.x-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 
-Teknologi
+Sebuah proyek Node.js untuk manajemen user, role, kategori, serta pencatatan dan analisis kehadiran yang dibangun dengan teknologi modern dan arsitektur yang scalable.
 
-Persiapan & Instalasi
+[Fitur](#-fitur) •
+[Instalasi](#-instalasi) •
+[API Docs](#-api-endpoints) •
+[Struktur](#-struktur-proyek) •
+[Kontribusi](#-kontribusi)
 
-Struktur Proyek
+</div>
 
-Endpoint API
+---
 
-Skema Database
+## ✨ Fitur
 
-Penggunaan
+<table>
+<tr>
+<td width="50%">
 
-Kontribusi
+### 👥 Manajemen User
+- ✅ CRUD user lengkap
+- ✅ Sistem role & kategori
+- ✅ Hash password dengan bcrypt
+- ✅ Validasi data
 
-Lisensi
+</td>
+<td width="50%">
 
-Fitur
+### 📈 Analisis Kehadiran
+- ✅ Pencatatan kehadiran real-time
+- ✅ Analisis berdasarkan periode
+- ✅ Grouping by kategori/role
+- ✅ Statistik komprehensif
 
-Manajemen user dengan role dan kategori
+</td>
+</tr>
+<tr>
+<td width="50%">
 
-Pencatatan kehadiran per user
+### 🔐 Keamanan
+- ✅ Password encryption
+- ✅ Input validation
+- ✅ Type-safe dengan TypeScript
 
-Analisis kehadiran berdasarkan rentang tanggal
+</td>
+<td width="50%">
 
-Analisis tergrup berdasarkan kategori atau role
+### 📊 Reporting
+- ✅ Persentase kehadiran
+- ✅ Export data
+- ✅ RESTful API
 
-Statistik kehadiran (Hadir, Izin, Sakit, Alpha)
+</td>
+</tr>
+</table>
 
-RESTful API untuk CRUD user dan analisis
+---
 
-Teknologi
+## 🚀 Teknologi
 
-Backend: Node.js, TypeScript, Express.js
+<div align="center">
 
-ORM: Prisma
+| Kategori | Teknologi |
+|----------|-----------|
+| **Backend** | Node.js, TypeScript, Express.js |
+| **Database** | MySQL 8.0+ |
+| **ORM** | Prisma |
+| **Security** | bcrypt |
+| **Validation** | Built-in validators |
 
-Database: MySQL
+</div>
 
-Autentikasi: bcrypt (hash password)
+---
 
-Penanganan Tanggal: JavaScript bawaan
+## 📦 Instalasi
 
-Persiapan & Instalasi
-Prasyarat
+### Prasyarat
 
-Node.js >= 18
+Pastikan Anda telah menginstall:
+- 📌 Node.js versi 18 atau lebih tinggi
+- 📌 MySQL Server
+- 📌 npm atau yarn package manager
 
-Database MySQL
+### Langkah Instalasi
 
-npm atau yarn
-
-Instalasi
-
-Clone repositori:
-
+1️⃣ **Clone repositori**
+```bash
 git clone https://github.com/username/proyek-kehadiran.git
 cd proyek-kehadiran
+```
 
-
-Install dependencies:
-
+2️⃣ **Install dependencies**
+```bash
 npm install
 # atau
-yarn
+yarn install
+```
 
+3️⃣ **Setup environment variables**
 
-Buat file .env:
-
+Buat file `.env` di root project:
+```env
 DATABASE_URL="mysql://USER:PASSWORD@HOST:PORT/DATABASE"
 PORT=3000
+```
 
-
-Jalankan migrasi Prisma:
-
+4️⃣ **Jalankan migrasi database**
+```bash
 npx prisma migrate dev --name init
 npx prisma generate
+```
 
-
-Jalankan server:
-
+5️⃣ **Jalankan server development**
+```bash
 npm run dev
 # atau
 yarn dev
+```
 
+✅ Server akan berjalan di: `http://localhost:3000`
 
-Server akan berjalan di: http://localhost:3000
+---
 
-Struktur Proyek
+## 📁 Struktur Proyek
+
+```
 src/
-├── controllers/      # Controller API
-├── services/         # Logika bisnis & helper
-├── routes/           # Route Express
-├── prisma/           # Prisma client & schema
-├── utils/            # Fungsi utilitas
-└── index.ts          # Entry point
+├── 📂 controllers/      # Controller layer untuk handling request
+├── 📂 services/         # Business logic & helper functions
+├── 📂 routes/           # Express route definitions
+├── 📂 prisma/           # Prisma client & database schema
+├── 📂 utils/            # Utility functions & helpers
+└── 📄 index.ts          # Application entry point
+```
 
-Endpoint API
-Users
+---
 
-GET /users – Daftar semua user
+## 🔌 API Endpoints
 
-POST /users – Tambah user
+### 👤 User Management
 
-GET /users/:id – Ambil user berdasarkan ID
+| Method | Endpoint | Deskripsi |
+|--------|----------|-----------|
+| `GET` | `/users` | Mendapatkan semua user |
+| `POST` | `/users` | Menambah user baru |
+| `GET` | `/users/:id` | Mendapatkan user berdasarkan ID |
+| `PUT` | `/users/:id` | Update data user |
+| `DELETE` | `/users/:id` | Hapus user |
 
-PUT /users/:id – Update user
+### 📅 Attendance
 
-DELETE /users/:id – Hapus user
+| Method | Endpoint | Deskripsi |
+|--------|----------|-----------|
+| `GET` | `/attendance/:userId` | Mendapatkan kehadiran user |
+| `POST` | `/attendance` | Menambah record kehadiran |
 
-Attendance
+### 📊 Analysis
 
-GET /attendance/:userId – Ambil attendance user
+| Method | Endpoint | Deskripsi |
+|--------|----------|-----------|
+| `POST` | `/attendance-analysis` | Analisis kehadiran tergrup |
 
-POST /attendance – Tambah record attendance
+#### Contoh Request Analysis
 
-Analisis
-
-POST /attendance-analysis – Ambil analisis kehadiran tergrup
-
-Contoh Request:
-
+```json
 {
   "start_date": "2025-11-01",
   "end_date": "2025-11-07",
   "category": "RPL-5",
   "role": "siswa"
 }
+```
 
-Skema Database
-User
-Field	Tipe
-id	Int (PK)
-name	String
-username	String
-password	String
-role	String
-category	String
-created_at	DateTime
-updated_at	DateTime
-Attendance
-Field	Tipe
-id	Int (PK)
-userId	Int (FK)
-date	DateTime
-status	Enum: hadir, izin, sakit, alpha
-created_at	DateTime
-updated_at	DateTime
-Penggunaan
+#### Contoh Response
 
-Tambahkan user dan record attendance di database.
-
-Gunakan endpoint /attendance-analysis untuk mendapatkan analisis:
-
-{
-  "start_date": "2025-11-01",
-  "end_date": "2025-11-07",
-  "category": "RPL-5"
-}
-
-
-Contoh response:
-
+```json
 {
   "data": {
     "analysis_period": {
@@ -194,3 +211,109 @@ Contoh response:
     ]
   }
 }
+```
+
+---
+
+## 🗄️ Skema Database
+
+### 📋 Tabel User
+
+| Field | Tipe | Keterangan |
+|-------|------|------------|
+| `id` | Int | Primary Key |
+| `name` | String | Nama user |
+| `username` | String | Username (unique) |
+| `password` | String | Hashed password |
+| `role` | String | Role user |
+| `category` | String | Kategori user |
+| `created_at` | DateTime | Waktu dibuat |
+| `updated_at` | DateTime | Waktu update |
+
+### 📝 Tabel Attendance
+
+| Field | Tipe | Keterangan |
+|-------|------|------------|
+| `id` | Int | Primary Key |
+| `userId` | Int | Foreign Key ke User |
+| `date` | DateTime | Tanggal kehadiran |
+| `status` | Enum | `hadir`, `izin`, `sakit`, `alpha` |
+| `created_at` | DateTime | Waktu dibuat |
+| `updated_at` | DateTime | Waktu update |
+
+---
+
+## 💡 Penggunaan
+
+### Quick Start
+
+1. **Tambahkan user** melalui endpoint `/users`
+2. **Catat kehadiran** melalui endpoint `/attendance`
+3. **Dapatkan analisis** melalui endpoint `/attendance-analysis`
+
+### Contoh Flow
+
+```bash
+# 1. Tambah user
+curl -X POST http://localhost:3000/users \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "username": "johndoe",
+    "password": "secure123",
+    "role": "siswa",
+    "category": "RPL-5"
+  }'
+
+# 2. Catat kehadiran
+curl -X POST http://localhost:3000/attendance \
+  -H "Content-Type: application/json" \
+  -d '{
+    "userId": 1,
+    "date": "2025-11-04",
+    "status": "hadir"
+  }'
+
+# 3. Analisis kehadiran
+curl -X POST http://localhost:3000/attendance-analysis \
+  -H "Content-Type: application/json" \
+  -d '{
+    "start_date": "2025-11-01",
+    "end_date": "2025-11-07",
+    "category": "RPL-5"
+  }'
+```
+
+---
+
+## 🤝 Kontribusi
+
+Kontribusi selalu diterima! Berikut cara berkontribusi:
+
+1. Fork project ini
+2. Buat branch fitur (`git checkout -b feature/AmazingFeature`)
+3. Commit perubahan (`git commit -m 'Add some AmazingFeature'`)
+4. Push ke branch (`git push origin feature/AmazingFeature`)
+5. Buat Pull Request
+
+---
+
+## 📄 Lisensi
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+## 📞 Kontak
+
+Project Link: [https://github.com/username/proyek-kehadiran](https://github.com/username/proyek-kehadiran)
+
+---
+
+<div align="center">
+
+### ⭐ Jangan lupa berikan star jika project ini membantu!
+
+**Made with ❤️ using TypeScript & Prisma**
+
+</div>
