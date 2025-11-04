@@ -286,30 +286,6 @@ curl -X POST http://localhost:3000/attendance-analysis \
 
 ---
 
-## 🤝 Kontribusi
-
-Kontribusi selalu diterima! Berikut cara berkontribusi:
-
-1. Fork project ini
-2. Buat branch fitur (`git checkout -b feature/AmazingFeature`)
-3. Commit perubahan (`git commit -m 'Add some AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
-5. Buat Pull Request
-
----
-
-## 📄 Lisensi
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
-## 📞 Kontak
-
-Project Link: [https://github.com/username/proyek-kehadiran](https://github.com/username/proyek-kehadiran)
-
----
-
 <div align="center">
 
 ### ⭐ Jangan lupa berikan star jika project ini membantu!
